@@ -60,6 +60,16 @@ h3 {
 }
 
 /* index styles */
+.blogs a {
+  border-left: 6px solid crimson;
+  display: block;
+  margin: 40px 0;
+  padding-left: 30px;
+}
+
+.blogs a:hover h3 {
+  color: crimson;
+}
 
 /* details styles */
 
