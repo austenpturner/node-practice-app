@@ -1,14 +1,20 @@
 const express = require("express");
 const morgan = require("morgan");
+const mongoose = require("mongoose");
 
 // express app
 const app = express();
 
+// connect to MongoDB
+const dbURI =
+  "mongodb+srv://austenpt:Aptnode0907@node-practice.k2vtxon.mongodb.net/node-practice?retryWrites=true&w=majority&appName=node-practice";
+mongoose
+  .connect(dbURI) // async task
+  .then((result) => app.listen(3000)) // listen for requests
+  .catch((err) => console.log(err));
+
 // register view engine
 app.set("view engine", "ejs");
-
-// listen for requests
-app.listen(3000);
 
 // middleware & static files
 app.use(express.static("public"));
